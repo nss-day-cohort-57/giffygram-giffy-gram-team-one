@@ -29,13 +29,14 @@ applicationElement.addEventListener("click", event =>{
         newPost.timestamp = Date.now()
 
         sendPosts(newPost)
-
+        document.dispatchEvent(new CustomEvent("stateChanged"))
 
     }
 })
 
 applicationElement.addEventListener("click", event => {
     if (event.target.id === "newPost__cancel") {
+        document.dispatchEvent(new CustomEvent("stateChanged"))
         
     }
 })
