@@ -27,6 +27,12 @@ document.addEventListener("click", clickEvent => {
         }
     })
 
+document.addEventListener("click", event => {
+    if (event.target.id === "directMessageIcon") {
+        document.dispatchEvent(new CustomEvent("displayMessageForm"))
+    }
+})
+
 
 
             
