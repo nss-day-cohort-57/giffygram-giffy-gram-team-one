@@ -63,7 +63,7 @@ export const deletePosts = (id) => {
 export const fetchMessages = () => {
     return fetch(`${apiURL}/messages`)
         .then((response) => response.json())
-        .then((messages) => { applicationState.comments = comments })
+        .then((messages) => { applicationState.messages = messages })
 }
 
 export const getMessages = () => {
