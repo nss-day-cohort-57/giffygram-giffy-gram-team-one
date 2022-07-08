@@ -1,4 +1,4 @@
-import { getPosts, getUsers } from "../data/provider.js"
+import { getPosts, getUsers, deletePosts } from "../data/provider.js"
 import { PostEntry } from "./postEntry.js"
 
 let showForm = false
@@ -53,6 +53,7 @@ export const Posts = () => {
                 <div class="post__actions">
                     <div>
                         <img id="favoritePost--37" class="actionIcon" src="http://giffygram.nss.team/images/favorite-star-blank.svg">
+                        ${DeleteButton(post)}
                     </div>
                 </div>
             </section>
@@ -70,4 +71,20 @@ document.addEventListener("click", event => {
 
 document.addEventListener("close", event => {
     showForm = false
+})
+
+const DeleteButton = (post) => {
+    let currentUserID = localStorage.gg_user
+    let deleteHTML = ``
+    if (currentUserID == post.userId) {
+        deleteHTML += `<button class="delete-button" id="delete--${post.id}">Delete Post</button>`
+    }
+    return deleteHTML
+}
+
+document.addEventListener("click", click => {
+    if (click.target.id.startsWith("delete--")) {
+        const [, postId] = click.target.id.split("--")
+        deletePosts(parseInt(postId))
+    }
 })

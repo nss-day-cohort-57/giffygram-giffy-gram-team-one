@@ -55,7 +55,8 @@ export const deletePosts = (id) => {
     return fetch(`${apiURL}/posts/${id}`, { method: "DELETE" })
         .then(
             () => {
-                applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+                document.dispatchEvent(new CustomEvent("close"))
+                document.dispatchEvent(new CustomEvent("stateChanged"))
             }
         )
 }
@@ -120,3 +121,4 @@ export const deleteFavorites = (id) => {
             }
         )
 }
+
