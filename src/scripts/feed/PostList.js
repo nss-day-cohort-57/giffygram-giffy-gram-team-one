@@ -1,5 +1,12 @@
-import { getPosts } from "../data/provider.js"
+import { getPosts, getUsers } from "../data/provider.js"
 import { PostEntry } from "./PostList.js"
+
+const getUserNamebyId = (userId) => {
+    const users = getUsers()
+    const foundUser = users.find(user => user.id === userId)
+    
+    return foundUser.name
+}
 
 export const Posts = () => {
     const posts = getPosts()
@@ -17,7 +24,7 @@ export const Posts = () => {
                 <div class="post__description">${post.description}</div>
                 <div class="post__tagline">
                     " Posted by "
-                    <a href="#" class="profileLink" id="profile--${post.userId}"></a>
+                    <a href="#" class="profileLink" id="profile--${post.userId}">${getUserNamebyId(post.userId)}</a>
                 </div>
             </section>
             `
