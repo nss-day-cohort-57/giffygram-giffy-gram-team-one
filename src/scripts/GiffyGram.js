@@ -1,4 +1,4 @@
-import { navigation } from "./NavBar.js"
+import { navigation } from "./nav/NavBar.js"
 import { Footer } from "./nav/Footer.js"
 
 export const GiffyGram = () => {
