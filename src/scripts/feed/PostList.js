@@ -11,6 +11,12 @@ const showButtonOrForm = (showForm) => {
     return `<div class="miniMode" id="miniMode">Have a gif to post?</div>`
 }
 
+const getSortedPosts = () => {
+    const posts = getPosts()
+
+    return posts.sort((post1, post2) => post2.timestamp - post1.timestamp)
+}
+
 const getUserNamebyId = (userId) => {
     const users = getUsers()
     const foundUser = users.find(user => user.id === userId)
@@ -27,7 +33,7 @@ const convertToDate = (timestamp) => {
 }
 
 export const Posts = () => {
-    const posts = getPosts()
+    const posts = getSortedPosts()
 
     return `
         ${showButtonOrForm(showForm)}
