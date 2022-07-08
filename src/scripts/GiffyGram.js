@@ -1,4 +1,4 @@
-import { navigation } from "./NavBar.js"
+import { Posts } from "./feed/PostList.js"
 
 export const GiffyGram = () => {
 
@@ -6,14 +6,9 @@ export const GiffyGram = () => {
     return `
         <h1>Giffygram</h1>
         <section class="navigation">
-            ${navigation()}
+
         </section>
-        <section class="miniMode">
-            todo - add a post function here
-        </section>
-        <section class="giffygram__feed">
-            todo - main feed function here
-        </section>
+            ${Posts()}
         <section class="footer">
             todo - footer funtion here
         </section>

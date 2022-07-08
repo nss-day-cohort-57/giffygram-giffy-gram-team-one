@@ -36,5 +36,31 @@
       "email": "emily@lemmon.com",
       "password": "emily"
     }
+  ], 
+  "posts": [
+    {
+    "title": "Sirius Salami wuz here.",
+    "imageURL": "https://media.giphy.com/media/xT9IgBthpxsHpK9RF6/giphy.gif",
+    "description": "This is kool!",
+    "userId": 3,
+    "timestamp": 1649518516138,
+    "id": 7
+  },
+  {
+    "title": "youve gobbled your last gool!!!!",
+    "imageURL": "https://c.tenor.com/laUBgkKw2FoAAAAC/gabagool-sad.gif",
+    "description": "",
+    "userId": 1,
+    "timestamp": 1649519145821,
+    "id": 10
+  },
+  {
+    "title": "Woohoo",
+    "imageURL": "https://media4.giphy.com/media/yoJC2GnSClbPOkV0eA/giphy.gif?cid=ecf05e47df45cb8b0c5d9dc0582ac7742a96c17e0f9b4886&rid=giphy.gif&ct=g",
+    "description": "Crazzzyyyyyyy",
+    "userId": 3,
+    "timestamp": 1650131571645,
+    "id": 11
+  }
   ]
 }

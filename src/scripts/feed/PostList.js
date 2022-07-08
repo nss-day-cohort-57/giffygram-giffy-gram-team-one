@@ -1,5 +1,15 @@
 import { getPosts, getUsers } from "../data/provider.js"
-import { PostEntry } from "./PostList.js"
+//import { PostEntry } from "./PostList.js"
+
+let showForm = false
+
+const showButtonOrForm = (showForm) => {
+    if (showForm) {
+        return `<div>postEntryForm</div>` //call PostEntry() when finished
+    }
+
+    return `<div class="miniMode" id="miniMode">Have a gif to post?</div>`
+}
 
 const getUserNamebyId = (userId) => {
     const users = getUsers()
@@ -21,8 +31,8 @@ export const Posts = () => {
 
     return `
     <div class="giffygram__feed">
-        <div class="miniMode" id="miniMode">Have a gif to post?</div>
-        ${post.map(post => 
+        ${showButtonOrForm(showForm)}
+        ${posts.map(post => 
             `
             <section class="post">
                 <header>
@@ -46,3 +56,10 @@ export const Posts = () => {
     </div>
     `
 }
+
+document.addEventListener("click", event => {
+    if (event.target.id === "miniMode") {
+        showForm = true
+        document.dispatchEvent(new CustomEvent("stateChanged"))
+    }
+})
