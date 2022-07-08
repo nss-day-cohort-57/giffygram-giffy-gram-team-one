@@ -1,5 +1,6 @@
 import { Navigation } from "./nav/NavBar.js"
 import { Footer } from "./nav/Footer.js"
+import { Posts } from "./feed/PostList.js"
 
 export const GiffyGram = () => {
 
@@ -8,11 +9,8 @@ export const GiffyGram = () => {
         <section class="navigation">
             ${Navigation()}
         </section>
-        <section class="miniMode">
-            todo - add a post function here
-        </section>
         <section class="giffygram__feed">
-            todo - main feed function here
+            ${Posts()}
         </section>
         <section class="footer">
             ${Footer()}
