@@ -22,7 +22,7 @@ applicationElement.addEventListener("click", event =>{
         const newPost = {}
 
         newPost.id = postIndex
-
+        newPost.userId = parseInt(localStorage.getItem("gg_user"))
         newPost.title = document.querySelector("input[name='postTitle']").value
         newPost.imageURL = document.querySelector("input[name='postURL']").value
         newPost.description = document.querySelector("input[name='postDescription']").value
@@ -31,5 +31,11 @@ applicationElement.addEventListener("click", event =>{
         sendPosts(newPost)
 
 
+    }
+})
+
+applicationElement.addEventListener("click", event => {
+    if (event.target.id === "newPost__cancel") {
+        
     }
 })
