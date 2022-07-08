@@ -1,4 +1,5 @@
 import { navigation } from "./NavBar.js"
+import { Footer } from "./nav/Footer.js"
 
 export const GiffyGram = () => {
 
@@ -15,7 +16,7 @@ export const GiffyGram = () => {
             todo - main feed function here
         </section>
         <section class="footer">
-            todo - footer funtion here
+            ${Footer()}
         </section>
     `
 }
