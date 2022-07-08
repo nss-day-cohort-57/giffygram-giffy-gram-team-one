@@ -1,12 +1,11 @@
-import { navigation } from "./NavBar.js"
+import { Navigation } from "./nav/NavBar.js"
 
 export const GiffyGram = () => {
 
     // Show main main UI
     return `
-        <h1>Giffygram</h1>
         <section class="navigation">
-            ${navigation()}
+            ${Navigation()}
         </section>
         <section class="miniMode">
             todo - add a post function here
