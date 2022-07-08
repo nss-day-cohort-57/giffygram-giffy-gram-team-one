@@ -1,9 +1,12 @@
-import { getUsers } from "../data/provider.js";
+import { getFavorites, getUsers } from "../data/provider.js";
 
 export const Footer = () => {
     return `<nav class="footer">
                 <div class="footer__item">
-                    Posts by user: ${userHTML()}
+                    Posts by user ${userHTML()}
+                </div>
+                <div class="footer__item">
+                    Show only favorites <input type="checkbox" value="favoriteCheck" />
                 </div>
             </nav>
     `
