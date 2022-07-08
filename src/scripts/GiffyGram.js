@@ -1,4 +1,4 @@
-import { navigation } from "./nav/NavBar.js"
+import { Navigation } from "./nav/NavBar.js"
 import { Footer } from "./nav/Footer.js"
 
 export const GiffyGram = () => {
@@ -7,7 +7,7 @@ export const GiffyGram = () => {
     return `
         <h1>Giffygram</h1>
         <section class="navigation">
-            ${navigation()}
+            ${Navigation()}
         </section>
         <section class="miniMode">
             todo - add a post function here
