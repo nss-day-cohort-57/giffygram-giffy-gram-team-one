@@ -1,11 +1,11 @@
-import { getPosts, getUsers } from "../data/provider.js"
+import { getPosts, getUsers, sendFavorites, getFavorites } from "../data/provider.js"
 import { PostEntry } from "./postEntry.js"
 
 let showForm = false
 
 const showButtonOrForm = (showForm) => {
     if (showForm) {
-        return `${PostEntry()}` //call PostEntry() when finished
+        return `${PostEntry()}`
     }
 
     return `<div class="miniMode" id="miniMode">Have a gif to post?</div>`
@@ -25,7 +25,9 @@ const convertToDate = (timestamp) => {
         ${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}
     `
 }
+export const Favorite = () => {
 
+}
 export const Posts = () => {
     const posts = getPosts()
 
@@ -46,7 +48,7 @@ export const Posts = () => {
                 </div>
                 <div class="post__actions">
                     <div>
-                        <img id="favoritePost--37" class="actionIcon" src="http://giffygram.nss.team/images/favorite-star-blank.svg">
+                        <img id="favoritePost--${post.id}" class="actionIcon" src="http://giffygram.nss.team/images/favorite-star-blank.svg">
                     </div>
                 </div>
             </section>
@@ -55,6 +57,20 @@ export const Posts = () => {
     `
 }
 
+document.addEventListener("click", event => {
+    if (event.target.id.startsWith("favoritePost--")) {
+        const [,postId] = event.target.id.split("--")
+
+        const favoriteObject = {}
+
+        favoriteObject.id = getFavorites().length
+        favoriteObject.userId = parseInt(localStorage.getItem("gg_user"))
+        favoriteObject.postId = parseInt(postId)
+
+        event.target.src = "http://giffygram.nss.team/images/favorite-star-yellow.svg"
+        sendFavorites(favoriteObject)
+    }
+})
 document.addEventListener("click", event => {
     if (event.target.id === "miniMode") {
         showForm = true
