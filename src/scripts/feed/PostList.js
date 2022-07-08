@@ -40,9 +40,9 @@ export const Posts = () => {
                 <img class="post__image" src="${post.imageURL}">
                 <div class="post__description">${post.description}</div>
                 <div class="post__tagline">
-                    " Posted by "
+                    Posted by 
                     <a href="#" class="profileLink" id="profile--${post.userId}">${getUserNamebyId(post.userId)}</a>
-                    " On ${convertToDate(post.timestamp)} "
+                    On ${convertToDate(post.timestamp)} 
                 </div>
                 <div class="post__actions">
                     <div>
