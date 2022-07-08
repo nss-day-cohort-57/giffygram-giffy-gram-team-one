@@ -30,7 +30,6 @@ export const Posts = () => {
     const posts = getPosts()
 
     return `
-    <div class="giffygram__feed">
         ${showButtonOrForm(showForm)}
         ${posts.map(post => 
             `
@@ -53,7 +52,6 @@ export const Posts = () => {
             </section>
             `
             ).join("")}
-    </div>
     `
 }
 
