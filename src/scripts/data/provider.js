@@ -47,7 +47,7 @@ export const sendPosts = (postData) => {
     return fetch(`${apiURL}/posts`, fetchOptions)
         .then(response => response.json())
         .then(() => {
-            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
         })
 }
 
@@ -55,7 +55,7 @@ export const deletePosts = (id) => {
     return fetch(`${apiURL}/posts/${id}`, { method: "DELETE" })
         .then(
             () => {
-                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+                applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
             }
         )
 }
@@ -82,7 +82,7 @@ export const sendMessages = (messageData) => {
     return fetch(`${apiURL}/messages`, fetchOptions)
         .then(response => response.json())
         .then(() => {
-            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
         })
 }
 
@@ -108,7 +108,7 @@ export const sendFavorites = (favoriteData) => {
     return fetch(`${apiURL}/favorites`, fetchOptions)
         .then(response => response.json())
         .then(() => {
-            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
         })
 }
 
@@ -116,7 +116,7 @@ export const deleteFavorites = (id) => {
     return fetch(`${apiURL}/favorites/${id}`, { method: "DELETE" })
         .then(
             () => {
-                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+                applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
             }
         )
 }
