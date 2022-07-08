@@ -8,6 +8,14 @@ const getUserNamebyId = (userId) => {
     return foundUser.name
 }
 
+const convertToDate = (timestamp) => {
+    const date = new Date(timestamp)
+
+    return `
+        ${date.getMonth() + 1}/${date.getDay()}/${date.getFullYear()}
+    `
+}
+
 export const Posts = () => {
     const posts = getPosts()
 
@@ -25,6 +33,12 @@ export const Posts = () => {
                 <div class="post__tagline">
                     " Posted by "
                     <a href="#" class="profileLink" id="profile--${post.userId}">${getUserNamebyId(post.userId)}</a>
+                    " On ${convertToDate(post.timestamp)} "
+                </div>
+                <div class="post__actions">
+                    <div>
+                        <img id="favoritePost--37" class="actionIcon" src="http://giffygram.nss.team/images/favorite-star-blank.svg">
+                    </div>
                 </div>
             </section>
             `
