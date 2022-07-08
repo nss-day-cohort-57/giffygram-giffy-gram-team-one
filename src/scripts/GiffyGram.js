@@ -1,4 +1,5 @@
 import { Navigation } from "./nav/NavBar.js"
+import { Posts } from "./feed/PostList.js"
 
 export const GiffyGram = () => {
 
