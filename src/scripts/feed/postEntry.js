@@ -5,7 +5,7 @@ export const PostEntry = () => {
     return `
             <div class="newPost">
                 <div>
-                    <input value name="postTitle" class="newPost__input" type="text placeholder="Title">
+                    <input value name="postTitle" class="newPost__input" type="text" placeholder="Title">
                 </div>
                 <div>
                     <input value name="postURL" class="newPost__input" type="text" placeholder="URL of gif">
@@ -25,7 +25,7 @@ applicationElement.addEventListener("click", event =>{
         newPost.userId = parseInt(localStorage.getItem("gg_user"))
         newPost.title = document.querySelector("input[name='postTitle']").value
         newPost.imageURL = document.querySelector("input[name='postURL']").value
-        newPost.description = document.querySelector("input[name='postDescription']").value
+        newPost.description = document.querySelector("textarea[name='postDescription']").value
         newPost.timestamp = Date.now()
 
         sendPosts(newPost)
@@ -36,6 +36,7 @@ applicationElement.addEventListener("click", event =>{
 
 applicationElement.addEventListener("click", event => {
     if (event.target.id === "newPost__cancel") {
+        document.dispatchEvent(new CustomEvent("close"))
         document.dispatchEvent(new CustomEvent("stateChanged"))
         
     }

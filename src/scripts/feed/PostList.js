@@ -1,11 +1,11 @@
 import { getPosts, getUsers } from "../data/provider.js"
-//import { PostEntry } from "./PostList.js"
+import { PostEntry } from "./postEntry.js"
 
 let showForm = false
 
 const showButtonOrForm = (showForm) => {
     if (showForm) {
-        return `<div>postEntryForm</div>` //call PostEntry() when finished
+        return `${PostEntry()}` //call PostEntry() when finished
     }
 
     return `<div class="miniMode" id="miniMode">Have a gif to post?</div>`
@@ -22,7 +22,7 @@ const convertToDate = (timestamp) => {
     const date = new Date(timestamp)
 
     return `
-        ${date.getMonth() + 1}/${date.getDay()}/${date.getFullYear()}
+        ${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}
     `
 }
 
@@ -60,4 +60,8 @@ document.addEventListener("click", event => {
         showForm = true
         document.dispatchEvent(new CustomEvent("stateChanged"))
     }
+})
+
+document.addEventListener("close", event => {
+    showForm = false
 })
