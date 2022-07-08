@@ -37,4 +37,20 @@
       "password": "emily"
     }
   ]
+   "messages": [
+    {
+      "id": 1,
+      "userId": 1,
+      "recipientId": 2,
+      "message": "henlo",
+      "read": false
+    }
+  ],
+  "favorites": [
+    {
+      "id": 1,
+      "userId": 2,
+      "postId": 1
+    }
+  ]
 }
