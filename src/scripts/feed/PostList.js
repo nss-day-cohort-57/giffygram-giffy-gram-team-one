@@ -22,7 +22,7 @@ const convertToDate = (timestamp) => {
     const date = new Date(timestamp)
 
     return `
-        ${date.getMonth() + 1}/${date.getDay()}/${date.getFullYear()}
+        ${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}
     `
 }
 

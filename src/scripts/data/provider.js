@@ -44,18 +44,18 @@ export const sendPosts = (postData) => {
         body: JSON.stringify(postData)
     }
 
-    return fetch(`${API}/posts`, fetchOptions)
+    return fetch(`${apiURL}/posts`, fetchOptions)
         .then(response => response.json())
         .then(() => {
-            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
         })
 }
 
 export const deletePosts = (id) => {
-    return fetch(`${API}/posts/${id}`, { method: "DELETE" })
+    return fetch(`${apiURL}/posts/${id}`, { method: "DELETE" })
         .then(
             () => {
-                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+                applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
             }
         )
 }
@@ -79,10 +79,10 @@ export const sendMessages = (messageData) => {
         body: JSON.stringify(messageData)
     }
 
-    return fetch(`${API}/messages`, fetchOptions)
+    return fetch(`${apiURL}/messages`, fetchOptions)
         .then(response => response.json())
         .then(() => {
-            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
         })
 }
 
@@ -105,18 +105,18 @@ export const sendFavorites = (favoriteData) => {
         body: JSON.stringify(favoriteData)
     }
 
-    return fetch(`${API}/favorites`, fetchOptions)
+    return fetch(`${apiURL}/favorites`, fetchOptions)
         .then(response => response.json())
         .then(() => {
-            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
         })
 }
 
 export const deleteFavorites = (id) => {
-    return fetch(`${API}/favorites/${id}`, { method: "DELETE" })
+    return fetch(`${apiURL}/favorites/${id}`, { method: "DELETE" })
         .then(
             () => {
-                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+                applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
             }
         )
 }

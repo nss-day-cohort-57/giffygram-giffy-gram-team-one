@@ -1,4 +1,5 @@
 import { Navigation } from "./nav/NavBar.js"
+import { Footer } from "./nav/Footer.js"
 import { Posts } from "./feed/PostList.js"
 
 export const GiffyGram = () => {
@@ -12,7 +13,7 @@ export const GiffyGram = () => {
             ${Posts()}
         </section>
         <section class="footer">
-            todo - footer funtion here
+            ${Footer()}
         </section>
     `
 }
