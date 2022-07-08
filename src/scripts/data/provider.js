@@ -11,7 +11,7 @@ const applicationState = {
     },
     users: [],
     posts: [],
-    comments: [],
+    messages: [],
     favorites: []
 }
 
@@ -60,26 +60,26 @@ export const deletePosts = (id) => {
         )
 }
 
-export const fetchComments = () => {
-    return fetch(`${apiURL}/comments`)
+export const fetchMessages = () => {
+    return fetch(`${apiURL}/messages`)
         .then((response) => response.json())
-        .then((comments) => { applicationState.comments = comments })
+        .then((messages) => { applicationState.comments = comments })
 }
 
-export const getComments = () => {
-    return applicationState.comments.map(comment => ({ ...comment }))
+export const getMessages = () => {
+    return applicationState.messages.map(message => ({ ...message }))
 }
 
-export const sendComments = (commentData) => {
+export const sendMessages = (messageData) => {
     const fetchOptions = {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(commentData)
+        body: JSON.stringify(messageData)
     }
 
-    return fetch(`${API}/comments`, fetchOptions)
+    return fetch(`${API}/messages`, fetchOptions)
         .then(response => response.json())
         .then(() => {
             mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
